@@ -25,7 +25,7 @@ discovery:
   zen:
     ping.unicast.hosts: ${DISCOVERY_SERVICE}
     minimum_master_nodes: ${NUMBER_OF_MASTERS}
-    
+
 bootstrap:
   memory_lock: ${MEMORY_LOCK}
 
@@ -48,3 +48,9 @@ searchguard:
 metrics:
   statsd:
     host: ${STATSD_HOST}
+
+s3:
+  client:
+    default:
+      endpoint: ${S3_ENDPOINT}
+      protocol: ${S3_PROTOCOL}
