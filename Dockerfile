@@ -19,7 +19,7 @@ ENV SEARCHGUARD_SSL_HTTP_ENABLED=true
 ENV NODE_NAME=""
 
 # Install search-guard-ssl
-RUN ./bin/elasticsearch-plugin install -b com.floragunn:search-guard-ssl:6.1.3-25.1
+# RUN ./bin/elasticsearch-plugin install https://repo1.maven.org/maven2/com/floragunn/search-guard-ssl/6.1.3-25.1/search-guard-ssl-6.1.3-25.1.zip
 
 # Install s3 repository plugin
 RUN ./bin/elasticsearch-plugin install -b repository-s3
@@ -32,3 +32,7 @@ RUN ./bin/elasticsearch-plugin install -b https://github.com/Automattic/elastics
 
 # Install prometheus plugin
 RUN ./bin/elasticsearch-plugin install -b https://github.com/vvanholl/elasticsearch-prometheus-exporter/releases/download/6.1.3.0/elasticsearch-prometheus-exporter-6.1.3.0.zip
+
+ADD scripts /elasticsearch/scripts
+
+RUN apk add --update-cache jq

@@ -29,22 +29,6 @@ discovery:
 bootstrap:
   memory_lock: ${MEMORY_LOCK}
 
-searchguard:
-  ssl:
-    transport:
-      keystore_filepath: certs/node-keystore.jks
-      keystore_password: changeit
-      truststore_filepath: certs/truststore.jks
-      truststore_password: changeit
-      enforce_hostname_verification: false
-      enabled: ${SEARCHGUARD_SSL_TRANSPORT_ENABLED}
-    http:
-      enabled: ${SEARCHGUARD_SSL_HTTP_ENABLED}
-      keystore_filepath: certs/node-keystore.jks
-      keystore_password: changeit
-      truststore_filepath: certs/truststore.jks
-      truststore_password: changeit
-
 metrics:
   statsd:
     host: ${STATSD_HOST}
